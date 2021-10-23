@@ -33,7 +33,7 @@ module.exports = {
       items: [
         {
           label: 'Discord',
-          to: 'https://discord.gg/FjwyGQKYER',
+          to: 'https://discord.gg/U967mp5qbQ',
           position: 'right',
         },
         {
@@ -150,7 +150,7 @@ module.exports = {
       },
     ],
   ],
-  plugins: process.env.SKIP_TYPEDOC
+  plugins: true
     ? [require.resolve('./fix-typedoc-plugin.js')]
     : [
         [

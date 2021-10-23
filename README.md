@@ -9,7 +9,7 @@
   <a href="https://gqless.com">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-documentation?color=C00B84">
   </a>
-  <a href="https://discord.gg/9DNNPedhbx">
+  <a href="https://discord.gg/U967mp5qbQ">
     <img alt="Discord" src="https://img.shields.io/discord/793628688439836694?color=7289d9&label=discord">
   </a>
   <a href="https://twitter.com/gqlessdev">

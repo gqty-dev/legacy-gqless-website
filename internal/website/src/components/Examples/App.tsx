@@ -63,7 +63,7 @@ const Topbar = () => {
   );
 };
 
-function useSyncThemes() {
+export function useSyncThemes() {
   const { setColorMode } = useColorMode();
   useEffect(() => {
     const htmlElement = document.getElementsByTagName('html')[0];

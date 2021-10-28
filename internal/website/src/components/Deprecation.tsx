@@ -1,6 +1,11 @@
 import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
   Button,
   ChakraProvider,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -8,20 +13,19 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  useDisclosure,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
   Text,
-  Link,
+  theme,
+  useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
+import { useSyncThemes } from './Examples/App';
 
 function DeprecationModalComponent() {
   const { isOpen, onClose } = useDisclosure({
     defaultIsOpen: true,
   });
+
+  useSyncThemes();
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="2xl">
@@ -54,7 +58,7 @@ function DeprecationModalComponent() {
                 You can now visit{' '}
                 <Link
                   fontWeight="bold"
-                  color="facebook.500"
+                  color="pink.500"
                   href="https://github.com/gqty-dev/gqty"
                 >
                   https://github.com/gqty-dev/gqty
@@ -62,7 +66,7 @@ function DeprecationModalComponent() {
                 or{' '}
                 <Link
                   fontWeight="bold"
-                  color="facebook.500"
+                  color="pink.500"
                   href="https://gqty.dev"
                 >
                   https://gqty.dev
@@ -74,7 +78,7 @@ function DeprecationModalComponent() {
                 <Link
                   href="https://discord.gg/jktJsaZSmP"
                   fontWeight="bold"
-                  color="facebook.500"
+                  color="pink.500"
                   target="_blank"
                 >
                   https://discord.gg/jktJsaZSmP
@@ -96,7 +100,18 @@ function DeprecationModalComponent() {
 
 export function DeprecationModal() {
   return (
-    <ChakraProvider resetCSS={false}>
+    <ChakraProvider
+      resetCSS={false}
+      theme={{
+        ...theme,
+        styles: {
+          ...theme.styles,
+          global() {
+            return null;
+          },
+        },
+      }}
+    >
       <DeprecationModalComponent />
     </ChakraProvider>
   );

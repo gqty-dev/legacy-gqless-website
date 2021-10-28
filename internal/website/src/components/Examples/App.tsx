@@ -11,6 +11,7 @@ import {
   IconButton,
   useBreakpointValue,
   useDisclosure,
+  useSafeLayoutEffect,
 } from '@chakra-ui/react';
 import { ChakraProvider, extendTheme, useColorMode } from '@chakra-ui/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -65,8 +66,10 @@ const Topbar = () => {
 
 export function useSyncThemes() {
   const { setColorMode } = useColorMode();
-  useEffect(() => {
+  useSafeLayoutEffect(() => {
     const htmlElement = document.getElementsByTagName('html')[0];
+
+    setColorMode(htmlElement.getAttribute('data-theme'));
 
     const observer = new MutationObserver((mutations) => {
       for (const _m of mutations.filter(
@@ -127,7 +130,7 @@ const theme = extendTheme({
       body: null,
     },
   },
-});
+} as any);
 
 export function ExamplesPage({
   children,

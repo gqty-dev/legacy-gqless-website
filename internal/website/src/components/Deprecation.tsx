@@ -16,7 +16,6 @@ import {
   Text,
   theme,
   useDisclosure,
-  DarkMode,
 } from '@chakra-ui/react';
 import React from 'react';
 import { useSyncThemes } from './Examples/App';
@@ -113,9 +112,7 @@ export function DeprecationModal() {
         },
       }}
     >
-      <DarkMode>
-        <DeprecationModalComponent />
-      </DarkMode>
+      <DeprecationModalComponent />
     </ChakraProvider>
   );
 }
